@@ -23,11 +23,11 @@ route.post('/register', async(req, res) => {
 });
 
 route.post('/auth', async(req, res) => {
-    let username = req.body.username;
+    let email = req.body.email;
     let password = req.body.password;
     
     try {
-        const data = await Admin.findOne({username:username,password:password});
+        const data = await Admin.findOne({email:email,password:password});
         res.status(Constan.STATUS_OK).json({
             status: Constan.STATUS_OK,
             message: "Data found",
