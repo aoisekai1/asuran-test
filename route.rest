@@ -1,0 +1,140 @@
+GET http://localhost:3001/products
+
+###
+
+POST http://localhost:3001/products/save
+Content-Type: application/json
+
+{
+    "priode": 1,
+    "builder": "Gedung",
+    "builder_price": 7000000
+}
+
+###
+GET http://localhost:3001/products/edit/624ff4d45ff63263b56ef14f
+
+###
+PATCH http://localhost:3001/products/update/624ffd91bc5f2b542232686b
+Content-Type: application/json
+
+{
+    
+    "priode": 1,
+    "builder": "Rumah",
+    "builder_price": 5000000
+    
+}
+
+###
+DELETE http://localhost:3001/products/delete/624ffda5bc5f2b542232686e
+
+###
+PATCH http://localhost:3001/customer/update/625192aa464e707659f6a750
+Content-Type: application/json
+
+{
+    "nama":"Aoi",
+    "no_hp": "08192728918",
+    "email":"kyubi_star@ymail.com",
+    "jekel":"L",
+    "alamat":"Bandung"
+}
+
+###
+POST http://localhost:3001/customer/auth
+Content-Type: application/json
+
+{
+    "email":"kyubi_star@ymail.com",
+    "password": "12345"
+}
+
+###
+GET http://localhost:3001/okupasi/list
+
+###
+GET http://localhost:3001/okupasi/list/6251a3d31d1b733884521763
+
+###
+POST http://localhost:3001/okupasi/save
+Content-Type: application/json
+
+{
+    "code": "100",
+    "premi": 0.5,
+    "ket": "Ruko 1"
+}
+
+###
+PATCH http://localhost:3001/okupasi/update/6251a3d31d1b733884521763
+Content-Type: application/json
+
+{
+    "code": "100",
+    "premi": 2,
+    "ket": "Toko"
+}
+
+###
+
+DELETE http://localhost:3001/okupasi/delete/6251a3d31d1b733884521763
+
+
+###
+POST http://localhost:3001/claim/save
+Content-Type: application/json
+
+{
+    "user_id": "625192aa464e707659f6a750",
+    "no_polis": "",
+    "no_invoice": "",
+    "jenis_ansuransi": 1,
+    "priode": 1,
+    "okupasi": 1,
+    "harga_bangunan": "100000",
+    "konstruksi": 1,
+    "alamat": "dev",
+    "provinsi": "dev",
+    "kota": "dev",
+    "kabupaten": "dev",
+    "daerah": "dev",
+    "gempa": true,
+    "total": "200000",
+    "approve": false,
+    "approve_date": "",
+    "approve_by": "",
+    "reject": false,
+    "reject_date": "",
+    "reject_by": ""
+}
+
+###
+GET http://localhost:3001/claim/list/user/625192aa464e707659f6a750?page=1&limit=2
+
+###
+POST http://localhost:3001/privillage/user/save
+Content-Type: application/json
+
+{
+    "privillage_id":"6251b200dc64c69a9d3ffbcf",
+    "user_id": "625192aa464e707659f6a750",
+    "isRead": true,
+    "isInsert": true,
+    "isUpdate": true,
+    "isDelete": true,
+    "isApprove": true,
+    "isReject": true
+}
+
+###
+POST http://localhost:3001/admin/register
+Content-Type: application/json
+
+{
+    "nama": "Shuichi",
+    "email": "shuichi@yahoo.com",
+    "type_role": "11",
+    "username":  "Shuichi",
+    "password": "admin"
+}
