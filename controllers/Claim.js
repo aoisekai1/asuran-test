@@ -26,7 +26,6 @@ route.get('/list', paginate, (req, res) => {
 route.get('/list/user/:user_id', paginate, (req, res) => {
     let page = parseInt(req.query.page);
     let limit = parseInt(req.query.limit);
-
     try {
         res.status(Constan.STATUS_OK).json({
             status: Constan.STATUS_OK,
@@ -238,7 +237,9 @@ async function paginate(req, res, next){
     
     if(req.params.user_id !== undefined){
         param.user_id = req.params.user_id;
+        param.jenis_ansuransi = req.query.type;
     }
+
     try {
         result = await Claim.find(param).limit(limit).skip(startIndex).exec();
         
