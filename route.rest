@@ -128,13 +128,22 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3001/admin/register
+POST https://asuran-test.mamanabdurrahma.repl.co/admin/register
 Content-Type: application/json
 
 {
-    "nama": "Shuichi",
-    "email": "shuichi@yahoo.com",
+    "nama": "Admin",
+    "email": "admin@yahoo.com",
     "type_role": "11",
-    "username":  "Shuichi",
+    "username":  "Admin",
+    "password": "admin"
+}
+
+###
+POST https://asuran-test.mamanabdurrahma.repl.co/admin/auth
+Content-Type: application/json
+
+{
+    "email": "admin@yahoo.com",
     "password": "admin"
 }
