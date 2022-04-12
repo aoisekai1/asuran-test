@@ -102,7 +102,9 @@ route.post('/save', async(req, res) => {
         reject: req.body.reject,
         reject_date: req.body.reject_date,
         reject_by: req.body.reject_by,
-        status: ""
+        status: "",
+        expired: "",
+        expired_date: req.body.expired_date
     })
     try {
         const result = await claim.save();

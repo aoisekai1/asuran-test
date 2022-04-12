@@ -93,6 +93,14 @@ const claim = new mongoose.Schema({
     status:{
         type: String,
         require: true
+    },
+    expired:{
+        type: String,
+        require: true
+    },
+    expired_date:{
+        type: Date,
+        require: true
     }
 
 })
