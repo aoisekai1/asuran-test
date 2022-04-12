@@ -24,6 +24,19 @@ route.get('/list', paginate, (req, res) => {
     }
 });
 
+route.get('/list/:id', getItemId,(req, res) => {
+    try {
+        res.status(Constan.STATUS_OK).json({
+            status: Constan.STATUS_OK,
+            message: "Data found",
+            total: res.result.length,
+            data: res.result
+        });
+    } catch (error) {
+        res.status(Constan.STATUS_ERR).json({message:error})
+    }
+});
+
 route.post('/register', async(req, res) => {
     let reqCustomer = new Customers({
         nama: req.body.nama,
